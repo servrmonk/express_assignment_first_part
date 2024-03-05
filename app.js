@@ -15,7 +15,7 @@ next();
 
 app.use("/add-product", (req, res, next) => {
   // console.log("Inside add-product routes");
-  res.send(`<form action='/product' method="POST"><input type='text' name='title'><button type='submit'>Add Product</button></form>`);
+  res.send(`<form action='/product' method="POST"><input type='text' required name='title'><input type='number' required name='size'><button type='submit' />Add Product</button></form>`);
 });
   
 // app.use('/product',(req,res,next)=>{
