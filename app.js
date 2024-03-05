@@ -6,6 +6,8 @@ const app = express();
 const adminRoutes = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
 
+// the request goes from top to buttom 
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(adminRoutes);
@@ -31,6 +33,13 @@ app.use(shopRoutes);
 // app.use("/", (req, res, next) => {
 //   res.send("<h1>Hello from express!</h1>");
 // });
+
+
+// to add a 404 page we simply add a catch all middleware at the bottom where we not need the path  filter but we could add slash, app.use handle all http method not just get request 
+app.use((req,res,next)=>{
+  
+res.status(404).send("<h1>Page not found</h1>") //404 for page no found
+})
 
 app.listen(3000, () => {
   console.log("Server listening");
