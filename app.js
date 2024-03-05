@@ -10,7 +10,7 @@ const shopRoutes = require("./routes/shop.js");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(adminRoutes);
+app.use('/admin',adminRoutes); //starting with admin will go into admin routes file so to say and not only that
 app.use(shopRoutes);
 
 // app.use("/", (req, res, next) => {
