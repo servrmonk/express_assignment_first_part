@@ -4,13 +4,11 @@ const path = require("path");
 
 const app = express();
 
-const rootDir = require("./util/path.js");
-
 const adminRoutes = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
 const contactRoutes = require("./routes/contact-us.js");
 
-const errorController = require('./controllers/404.js')
+const errorController = require("./controllers/404.js");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));

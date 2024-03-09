@@ -5,6 +5,10 @@ exports.getAddProduct = (req, res, next) => {
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
 };
 exports.postAddProduct = (req, res, next) => {
-    console.log(req.body);
-    res.redirect("/");
-  }
+  console.log(req.body);
+  res.redirect("/");
+};
+
+exports.shopGet = (req, res, next) => {
+  res.sendFile(path.join(rootDir, "views", "shop.html"));
+};
