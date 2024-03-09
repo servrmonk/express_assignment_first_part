@@ -5,7 +5,7 @@ const path = require("path");
 
 const roodDir = require("../util/path");
 
-router.get("/", (req, res, next) => {
-  res.sendFile(path.join(roodDir, "views", "contact-us.html")); 
-});
+const contactUsController = require('../controllers/contactUs')
+
+router.get("/",contactUsController.contactUs);
 module.exports = router;
