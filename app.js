@@ -10,12 +10,15 @@ const rootDir = require('./util/path.js')
 
 const adminRoutes = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
+const contactRoutes = require("./routes/contact-us.js")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public'))) 
 
 app.use("/admin", adminRoutes);
 app.use("/shop", shopRoutes);
+app.use("/contact", contactRoutes);
+
 
 app.use((req, res, next) => {
   
