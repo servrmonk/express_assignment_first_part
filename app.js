@@ -12,6 +12,7 @@ const adminRoutes = require("./routes/admin.js");
 const shopRoutes = require("./routes/shop.js");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname,'public'))) //express object itself and static  method this is the built in middleware as u can read , here u serve content statically for css ,it serves static files, we will giving the acces to the public folder so we have written the dirnameis public
 
 app.use("/admin", adminRoutes);
 app.use("/shop", shopRoutes);
